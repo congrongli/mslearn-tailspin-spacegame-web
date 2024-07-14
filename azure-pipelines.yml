@@ -27,9 +27,9 @@ steps:
 
 - task: SonarQubePrepare@6
   inputs:
-    SonarQube: 'clitest-space-sonar'
+    SonarQube: 'space-sonar-test'
     scannerMode: 'MSBuild'
-    projectKey: 'Space_Game_-_web_-_Pipeline_Space_Game_-_web_539bf837-1128-4c24-a5f8-d28aaeb28d80'
+    projectKey: 'Space_Game_-_web_-_Pipeline_Space_Game_-_web_AZCxO37a0lxvlIf9XuuD'
 
 - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'

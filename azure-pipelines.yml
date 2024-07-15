@@ -25,12 +25,6 @@ steps:
 - task: gulp@1
   displayName: 'Run gulp tasks'
 
-- task: SonarQubePrepare@6
-  inputs:
-    SonarQube: 'space-sonar-test'
-    scannerMode: 'MSBuild'
-    projectKey: 'Space_Game_-_web_-_Pipeline_Space_Game_-_web_AZCxO37a0lxvlIf9XuuD'
-
 - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
   workingDirectory: Tailspin.SpaceGame.Web/wwwroot
@@ -47,11 +41,3 @@ steps:
     command: 'build'
     arguments: '--no-restore --configuration Release'
     projects: '**/*.csproj'
-
-- task: SonarQubeAnalyze@6
-  inputs:
-    jdkversion: 'JAVA_HOME_17_X64'
-
-- task: SonarQubePublish@6
-  inputs:
-    pollingTimeoutSec: '300'
